@@ -1,0 +1,57 @@
+.head_block {
+  padding: 1.5rem;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+hr {
+  width: 100%;
+  border-color: var(--gray);
+}
+
+.btn_menu {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: white;
+  background-image: url('../../images/menu-svgrepo-com.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu {
+  height: 25rem;
+  margin-top: 1.5rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  background-color: var(--dark-violet);
+}
+
+.btn {
+  cursor: pointer;
+  height: 3.5rem;
+  width: 80%;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--dark-violet);
+  font-size: 1.5rem;
+  color: white;
+}
+
+.btn:hover {
+  background-color: var(--cyan);
+}
+
+.hidden {
+  display: none;
+}
