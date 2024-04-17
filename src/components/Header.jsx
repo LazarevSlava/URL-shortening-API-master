@@ -11,7 +11,7 @@ function Header() {
     <div className={style.head_block}>
       <div className={style.head}>
         <img src={logo} alt="logo" />
-        <button className={style.btn_menu} onClick={toggleMenu}></button>
+        <button className={style.btn_menu} onClick={toggleMenu}>
       </div>
       <div className={`${style.menu} ${isMenuVisible ? '' : style.hidden}`}>
         <button className={style.btn}>Features</button>
