@@ -19,7 +19,7 @@ function Header() {
         <button className={style.btn}>Resources</button>
         <hr className={style.hr} />
         <button className={style.btn}>Login</button>
-        <button className={style.btn}>sign Up</button>
+        <button className={`${style.btn} ${style.btn_sign}`}>sign Up</button>
       </div>
     </div>
   );
