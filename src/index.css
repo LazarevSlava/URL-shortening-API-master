@@ -3,11 +3,11 @@
 :root {
   --cyan: hsl(180deg, 66%, 49%);
   --dark-violet: hsl(257deg, 27%, 26%);
-  --red: hsl(0, 87%, 67%);
-  --gray: hsl(0, 0%, 75%);
+  --red: hsl(0deg, 87%, 67%);
+  --gray: hsl(0deg, 0%, 75%);
   --grayish-violet: hsl(257deg, 7%, 63%);
   --very-dark-blue: hsl(255deg, 11%, 22%);
-  --very-dark-violet: hsl(260, 8%, 14%);
+  --very-dark-violet: hsl(260deg, 8%, 14%);
   --home-font: 'Poppins', sans-serif;
   --main-shadow: 0 0.3rem 1rem 0.3rem rgb(0, 1, 1, 0.2);
 }
