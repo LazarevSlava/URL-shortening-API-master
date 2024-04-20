@@ -40,7 +40,7 @@ hr {
 .btn {
   cursor: pointer;
   height: 3.5rem;
-  width: 80%;
+  width: 40%;
   border: none;
   border-radius: 2rem;
   background-color: var(--dark-violet);
@@ -48,8 +48,17 @@ hr {
   color: white;
 }
 
+.btn_sign {
+  width: 80%;
+  background-color: var(--cyan);
+}
+
 .btn:hover {
   background-color: var(--cyan);
+}
+
+.btn_sign:hover {
+  background-color: var(--bg-cyan-200);
 }
 
 .hidden {
