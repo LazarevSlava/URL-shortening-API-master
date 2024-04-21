@@ -1,6 +1,6 @@
 import style from './Header.module.css';
 import { useState } from 'react';
-import logo from '../../images/logo.svg?react';
+import Logo from '../../images/logo.svg?react';
 
 function Header() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -10,7 +10,7 @@ function Header() {
   return (
     <div className={style.head_block}>
       <div className={style.head}>
-        <img src={logo} alt="logo" />
+        <Logo />
         <button className={style.btn_menu} onClick={toggleMenu} />
       </div>
       <div className={`${style.menu} ${isMenuVisible ? '' : style.hidden}`}>

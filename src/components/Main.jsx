@@ -1,8 +1,9 @@
 import style from './Main.module.css';
-import person from '../../images/illustration-working.svg?react';
-import brand from '../../images/icon-brand-recognition.svg?react';
-import detailed from '../../images/icon-detailed-records.svg?react';
-import fully from '../../images/icon-fully-customizable.svg?react';
+import Person from '../../images/illustration-working.svg?react';
+import Brand from '../../images/icon-brand-recognition.svg?react';
+import Detailed from '../../images/icon-detailed-records.svg?react';
+import Fully from '../../images/icon-fully-customizable.svg?react';
+import { InfoBlock } from '../InfoBlock';
 
 function Main() {
   return (
@@ -15,7 +16,9 @@ function Main() {
           </p>
           <button className={style.getStarted}>Get Started</button>
         </section>
-        <img className={style.person} src={person} alt="person" />
+        <div className={style.svg}>
+          <Person className={style.person} />
+        </div>
       </div>
       <div className={style.shorted}>
         Search component
@@ -27,35 +30,35 @@ function Main() {
         </section>
         <section className={style.features}>
           <div className={style.icon}>
-            <img src={brand} alt="brand" />
+            <Brand />
           </div>
-          <h2 className={style.h}>Brand Recognition</h2>
-          <p className={style.p}>
-            Boost your brand recognition with each click. Generic links don&apos;t mean a thing.
-            Branded links help instil confidence in your content.
-          </p>
+          <InfoBlock
+            h={`Brand Recognition`}
+            p={`Boost your brand recognition with each click. Generic links don't mean a thing.
+            Branded links help instil confidence in your content.`}
+          />
         </section>
         <hr className={style.line} />
         <section className={style.features}>
           <div className={style.icon}>
-            <img src={detailed} alt="detailed" />
+            <Detailed />
           </div>
-          <h2 className={style.h}>Detailed Records</h2>
-          <p className={style.p}>
-            Gain insights into who is clicking your links. Knowing when and where people engage with
-            your content helps inform better decisions.
-          </p>
+          <InfoBlock
+            h={`Detailed Records`}
+            p={`Gain insights into who is clicking your links. Knowing when and where people engage with
+            your content helps inform better decisions.`}
+          />
         </section>
         <hr className={style.line} />
         <section className={style.features}>
           <div className={style.icon}>
-            <img src={fully} alt="fully" />
+            <Fully />
           </div>
-          <h2 className={style.h}>Fully Customizable</h2>
-          <p className={style.p}>
-            Improve brand awareness and content discoverability through customizable links,
-            supercharging audience engagement.
-          </p>
+          <InfoBlock
+            h={`Fully Customizable`}
+            p={`Improve brand awareness and content discoverability through customizable links,
+            supercharging audience engagement.`}
+          />
         </section>
       </div>
     </div>
