@@ -1,20 +1,24 @@
 import style from './Main.module.css';
-import Person from '../../images/illustration-working.svg?react';
-import Brand from '../../images/icon-brand-recognition.svg?react';
-import Detailed from '../../images/icon-detailed-records.svg?react';
-import Fully from '../../images/icon-fully-customizable.svg?react';
-import { InfoBlock } from '../InfoBlock';
+import Person from '../assets/illustration-working.svg?react';
+import Brand from '../assets/icon-brand-recognition.svg?react';
+import Detailed from '../assets/icon-detailed-records.svg?react';
+import Fully from '../assets/icon-fully-customizable.svg?react';
+import { Button } from './Button';
+import { Text } from './Text';
+import { Title } from './Title';
 
 function Main() {
   return (
     <div className={style.main}>
       <div className={style.more_img}>
         <section className={style.more}>
-          <h1 className={style.more_then}>More than just shorter links</h1>
+          <Title size={'normal'}>More than just shorter links</Title>
           <p className={style.p}>
             Build your brand&apos;s and get detailed insights on how your links are performing
           </p>
-          <button className={style.getStarted}>Get Started</button>
+          <Button size={'medium'} variant={'big_radius'}>
+            Get Started
+          </Button>
         </section>
         <div className={style.svg}>
           <Person className={style.person} />
@@ -23,42 +27,42 @@ function Main() {
       <div className={style.shorted}>
         Search component
         <section className={style.advanced}>
-          <h2 className={style.h}>Advanced Statistics</h2>
-          <p className={style.p}>
+          <Title size={'small'}>Advanced Statistics</Title>
+          <Text>
             Track how your links are performing across the web our advanced statistics dashboard
-          </p>
+          </Text>
         </section>
         <section className={style.features}>
           <div className={style.icon}>
             <Brand />
           </div>
-          <InfoBlock
-            h={`Brand Recognition`}
-            p={`Boost your brand recognition with each click. Generic links don't mean a thing.
-            Branded links help instil confidence in your content.`}
-          />
+          <Title size={'small'}>Brand Recognition</Title>
+          <Text>
+            Boost your brand recognition with each click. Generic links don&apos;t mean a thing.
+            Branded links help instil confidence in your content.
+          </Text>
         </section>
         <hr className={style.line} />
         <section className={style.features}>
           <div className={style.icon}>
             <Detailed />
           </div>
-          <InfoBlock
-            h={`Detailed Records`}
-            p={`Gain insights into who is clicking your links. Knowing when and where people engage with
-            your content helps inform better decisions.`}
-          />
+          <Title size={'small'}>Detailed Records</Title>
+          <Text>
+            Gain insights into who is clicking your links. Knowing when and where people engage with
+            your content helps inform better decisions.
+          </Text>
         </section>
         <hr className={style.line} />
         <section className={style.features}>
           <div className={style.icon}>
             <Fully />
           </div>
-          <InfoBlock
-            h={`Fully Customizable`}
-            p={`Improve brand awareness and content discoverability through customizable links,
-            supercharging audience engagement.`}
-          />
+          <Title size={'small'}>Fully Customizable</Title>
+          <Text>
+            Improve brand awareness and content discoverability through customizable links,
+            supercharging audience engagement.
+          </Text>
         </section>
       </div>
     </div>

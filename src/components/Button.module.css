@@ -1,12 +1,18 @@
-.getStarted {
+button {
   cursor: pointer;
-  height: 3.5rem;
-  width: 13rem;
   border: none;
-  border-radius: 2rem;
   background-color: var(--cyan);
   font-size: 1.5rem;
   color: white;
+}
+
+.medium {
+  height: 3.5rem;
+  width: 13rem;
+}
+
+.big_radius {
+  border-radius: 2rem;
 }
 
 .getStarted:hover {

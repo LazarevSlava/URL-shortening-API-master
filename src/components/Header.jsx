@@ -1,6 +1,6 @@
 import style from './Header.module.css';
 import { useState } from 'react';
-import Logo from '../../images/logo.svg?react';
+import Logo from '../assets/logo.svg?react';
 
 function Header() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
