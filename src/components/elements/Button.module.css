@@ -10,17 +10,21 @@
   height: 2rem;
   width: 8rem;
 }
+
 .medium {
   height: 3.5rem;
   width: 13rem;
 }
+
 .big {
   height: 5rem;
   width: 18rem;
 }
+
 .no_radius {
   border-radius: none;
 }
+
 .normal-radius {
   border-radius: 0.5rem;
 }
