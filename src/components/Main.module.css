@@ -2,51 +2,6 @@
   overflow: hidden;
 }
 
-.more_img {
-  display: flex;
-  flex-direction: column-reverse;
-  padding-left: 1.5rem;
-}
-
-.person {
-  transform: scale(0.8);
-  position: absolute;
-  right: -14rem;
-}
-
-.svg {
-  position: relative;
-  width: 100%;
-  height: 28rem;
-}
-
-.more {
-  padding: 1.5rem;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.p {
-  font-size: 1rem;
-  line-height: 2rem;
-  color: var(--grayish-violet);
-}
-
-.getStarted {
-  cursor: pointer;
-  height: 3.5rem;
-  width: 13rem;
-  border: none;
-  border-radius: 2rem;
-  background-color: var(--cyan);
-  font-size: 1.5rem;
-  color: white;
-}
-
-.getStarted:hover {
-  background-color: var(--bg-cyan-200);
-}
-
 .shorted {
   padding: 2rem;
   margin-top: 2rem;

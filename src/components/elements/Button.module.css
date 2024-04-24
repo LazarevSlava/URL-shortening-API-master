@@ -1,4 +1,4 @@
-button {
+.btn {
   cursor: pointer;
   border: none;
   background-color: var(--cyan);
@@ -6,15 +6,29 @@ button {
   color: white;
 }
 
+.small {
+  height: 2rem;
+  width: 8rem;
+}
 .medium {
   height: 3.5rem;
   width: 13rem;
+}
+.big {
+  height: 5rem;
+  width: 18rem;
+}
+.no_radius {
+  border-radius: none;
+}
+.normal-radius {
+  border-radius: 0.5rem;
 }
 
 .big_radius {
   border-radius: 2rem;
 }
 
-.getStarted:hover {
+.btn:hover {
   background-color: var(--bg-cyan-200);
 }
