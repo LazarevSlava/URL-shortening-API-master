@@ -19,7 +19,7 @@ hr {
   height: 2rem;
   border: none;
   background-color: white;
-  background-image: url('../../images/menu-svgrepo-com.svg');
+  background-image: url('../assets/menu-svgrepo-com.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
