@@ -1,0 +1,18 @@
+.bg {
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../assets/bg-boost-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--dark-violet);
+  gap: 1rem;
+}
+.down_block {
+  background: black;
+  width: 100%;
+  height: 20rem;
+}
