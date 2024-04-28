@@ -1,14 +1,14 @@
 import style from './ShortenField.module.css';
 import { Button } from '../elements/Button';
 import { useState, useRef } from 'react';
+import { urlPattern } from '../../helpers/RegExp';
 
 function ShortenField() {
   const [showError, setShowError] = useState(false);
   const inputRef = useRef(null);
 
-  const handleShort = () => {
-    const urlPattern =
-      /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/gi;
+  const handleShort = (e) => {
+    e.preventDefault();
     const regex = new RegExp(urlPattern);
     const inputValue = inputRef.current.value.trim();
     if (inputValue === '' || !inputValue.match(regex)) {
@@ -18,21 +18,20 @@ function ShortenField() {
     }
   };
   return (
-    <div className={style.field_block}>
+    <form onSubmit={handleShort} className={style.field_block}>
       <input
         ref={inputRef}
         className={`${style.field} ${showError ? style.invalid : ''}`}
         type="text"
         placeholder="Shorten a link here..."
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') handleShort();
-        }}
       />
-      <div className={`${style.message} ${showError ? '' : style.hidden}`}>Please add a link</div>
-      <Button size="large" variant="normal-radius" onClick={handleShort}>
+      <div hidden={!showError} className={style.message}>
+        Please add a link
+      </div>
+      <Button size="large" variant="normal-radius">
         Shorten it!
       </Button>
-    </div>
+    </form>
   );
 }
 export { ShortenField };
