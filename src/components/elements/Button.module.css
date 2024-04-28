@@ -16,9 +16,9 @@
   width: 13rem;
 }
 
-.big {
+.large {
   height: 5rem;
-  width: 18rem;
+  max-width: 20rem;
 }
 
 .no_radius {

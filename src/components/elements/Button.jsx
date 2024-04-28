@@ -1,7 +1,7 @@
 //  Available size options(String):
 //  - 'small'
 //  - 'medium'
-//  - 'big'
+//  - 'large'
 
 //  Available variant options(String):
 //   - 'big_radius'
@@ -10,7 +10,16 @@
 
 import style from './Button.module.css';
 
-function Button({ children, size = 'medium', variant = 'no_radius' }) {
-  return <button className={`${style.btn} ${style[size]} ${style[variant]}`}>{children}</button>;
+function Button({
+  children,
+  size = 'medium',
+  variant = 'no_radius',
+  onClick = Function.prototype,
+}) {
+  return (
+    <button onClick={onClick} className={`${style.btn} ${style[size]} ${style[variant]}`}>
+      {children}
+    </button>
+  );
 }
 export { Button };

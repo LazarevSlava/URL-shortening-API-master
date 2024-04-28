@@ -4,13 +4,14 @@ import Detailed from '../assets/icon-detailed-records.svg?react';
 import Fully from '../assets/icon-fully-customizable.svg?react';
 import { Hero } from './widget/Hero';
 import { Feature } from './widget/Feature';
+import { ShortenField } from './widget/ShortenField';
 
 function Main() {
   return (
     <div className={style.main}>
       <Hero />
       <div className={style.shorted}>
-        Search component
+        <ShortenField />
         <section className={style.advanced}>
           <Feature
             title="Advanced Statistics"
