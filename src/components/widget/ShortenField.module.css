@@ -1,0 +1,46 @@
+.field_block {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  width: calc(100% - 4rem);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-image: url('../../assets/bg-shorten-mobile.svg');
+  background-repeat: no-repeat;
+  background-color: var(--dark-violet);
+  gap: 2rem;
+}
+
+.field {
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+.field::placeholder {
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  opacity: 0.7;
+}
+
+.invalid {
+  border: 0.3rem outset var(--red);
+}
+
+.invalid::placeholder {
+  color: var(--red);
+}
+
+.message {
+  margin-top: -1.5rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--red);
+}
+
+.hidden {
+  display: none;
+}
