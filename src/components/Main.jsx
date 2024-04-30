@@ -5,8 +5,14 @@ import Fully from '../assets/icon-fully-customizable.svg?react';
 import { Hero } from './widget/Hero';
 import { Feature } from './widget/Feature';
 import { ShortenField } from './widget/ShortenField';
+import { useEffect } from 'react';
+import { fetchDateFromLocalStorage } from '../helpers/fetchDateFromLocalStorage';
 
 function Main() {
+  useEffect(() => {
+    fetchDateFromLocalStorage();
+  }, []);
+
   return (
     <div className={style.main}>
       <Hero />

@@ -1,7 +1,8 @@
 import style from './ShortenField.module.css';
 import { Button } from '../elements/Button';
 import { useState, useRef } from 'react';
-import { urlPattern } from '../../helpers/RegExp';
+import { urlPattern } from '../../helpers/regExp.js';
+import { shorteningURL } from '../../helpers/shortening.js';
 
 function ShortenField() {
   const [showError, setShowError] = useState(false);
@@ -9,14 +10,17 @@ function ShortenField() {
 
   const handleShort = (e) => {
     e.preventDefault();
+
     const regex = new RegExp(urlPattern);
     const inputValue = inputRef.current.value.trim();
     if (inputValue === '' || !inputValue.match(regex)) {
       setShowError(true);
     } else {
       setShowError(false);
+      shorteningURL(inputValue);
     }
   };
+
   return (
     <form onSubmit={handleShort} className={style.field_block}>
       <input
