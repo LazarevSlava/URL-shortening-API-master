@@ -5,19 +5,64 @@ import Fully from '../assets/icon-fully-customizable.svg?react';
 import { Hero } from './widget/Hero';
 import { Feature } from './widget/Feature';
 import { ShortenField } from './widget/ShortenField';
-import { useEffect } from 'react';
-import { fetchDateFromLocalStorage } from '../helpers/fetchDateFromLocalStorage';
+import { useEffect, useState } from 'react';
 
 function Main() {
+  const [dataUrl, setDataUrl] = useState([]);
+  console.log(dataUrl);
+
+  async function shorteningUrl(longUrl) {
+    const endpoint = 'https://api.shorten.rest/aliases';
+    const data = {
+      aliasName: null,
+      destinations: [
+        {
+          url: longUrl,
+          country: null,
+          os: null,
+        },
+      ],
+    };
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': 'd0a177e0-0855-11ef-8131-79bf2a423fe0',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const jsonResponse = await response.json();
+
+      const shortenedUrl = jsonResponse.shortUrl;
+
+      const newDataUrl = { originalUrl: longUrl, shortUrl: shortenedUrl };
+      localStorage.setItem('listOfUrl', JSON.stringify(newDataUrl));
+      setDataUrl(newDataUrl);
+
+      return newDataUrl;
+    } catch (error) {
+      console.log('Error shortening URL', error);
+      return null;
+    }
+  }
+
   useEffect(() => {
-    fetchDateFromLocalStorage();
+    const dataStorage = JSON.parse(localStorage.getItem('listOfUrl'));
+    if (dataStorage) {
+      setDataUrl(dataStorage);
+    }
   }, []);
 
   return (
     <div className={style.main}>
       <Hero />
       <div className={style.shorted}>
-        <ShortenField />
+        <ShortenField shorteningUrl={shorteningUrl} />
+
         <section className={style.advanced}>
           <Feature
             title="Advanced Statistics"
