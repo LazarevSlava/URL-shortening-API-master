@@ -1,7 +1,7 @@
 import style from './ShortenField.module.css';
 import { Button } from '../elements/Button';
 import { useState, useRef } from 'react';
-import { urlPattern } from '../../helpers/regExp.js';
+import { urlPattern } from '../../helpers/regExp';
 
 function ShortenField({ shorteningUrl = Function.prototype }) {
   const [showError, setShowError] = useState(false);

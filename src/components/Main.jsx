@@ -5,25 +5,16 @@ import Fully from '../assets/icon-fully-customizable.svg?react';
 import { Hero } from './widget/Hero';
 import { Feature } from './widget/Feature';
 import { ShortenField } from './widget/ShortenField';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 const myKey = import.meta.env.VITE_MY_SECRET_KEY;
+import { endpoint, data } from '../helpers/dataUrl';
 
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
   console.log(dataUrl);
 
-  async function shorteningUrl(longUrl) {
-    const endpoint = 'https://api.shorten.rest/aliases';
-    const data = {
-      aliasName: null,
-      destinations: [
-        {
-          url: longUrl,
-          country: null,
-          os: null,
-        },
-      ],
-    };
+  const shorteningUrl = useCallback(async (longUrl) => {
+    data.destinations[0] = { ...data.destinations[0], url: longUrl };
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -38,18 +29,15 @@ function Main() {
       }
       const jsonResponse = await response.json();
 
-      const shortenedUrl = jsonResponse.shortUrl;
+      const { shortUrl } = jsonResponse;
 
-      const newDataUrl = { originalUrl: longUrl, shortUrl: shortenedUrl };
+      const newDataUrl = [{ originalUrl: longUrl, shortUrl: shortUrl }];
       localStorage.setItem('listOfUrl', JSON.stringify(newDataUrl));
       setDataUrl(newDataUrl);
-
-      return newDataUrl;
     } catch (error) {
       console.log('Error shortening URL', error);
-      return null;
     }
-  }
+  }, []);
 
   useEffect(() => {
     const dataStorage = JSON.parse(localStorage.getItem('listOfUrl'));
