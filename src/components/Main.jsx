@@ -6,6 +6,7 @@ import { Hero } from './widget/Hero';
 import { Feature } from './widget/Feature';
 import { ShortenField } from './widget/ShortenField';
 import { useEffect, useState } from 'react';
+const myKey = import.meta.env.VITE_MY_SECRET_KEY;
 
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
@@ -28,7 +29,7 @@ function Main() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': 'd0a177e0-0855-11ef-8131-79bf2a423fe0',
+          'x-api-key': myKey,
         },
         body: JSON.stringify(data),
       });
