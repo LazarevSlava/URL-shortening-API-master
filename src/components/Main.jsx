@@ -11,33 +11,47 @@ import { endpoint, data } from '../helpers/dataUrl';
 
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
+
   console.log(dataUrl);
 
-  const shorteningUrl = useCallback(async (longUrl) => {
-    data.destinations[0] = { ...data.destinations[0], url: longUrl };
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': myKey,
-        },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
+  const shorteningUrl = useCallback(
+    async (longUrl) => {
+      const updatedDestination = {
+        ...data.destinations[0],
+        url: longUrl,
+      };
+
+      const updatedData = {
+        aliasName: data.aliasName,
+        destinations: [updatedDestination],
+      };
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': myKey,
+          },
+          body: JSON.stringify(updatedData),
+        });
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        const jsonResponse = await response.json();
+
+        const { shortUrl } = jsonResponse;
+
+        const newDataUrl = { originalUrl: longUrl, shortUrl: shortUrl };
+        const updatedDate = [...dataUrl, newDataUrl];
+        localStorage.setItem('listOfUrl', JSON.stringify(updatedDate));
+
+        setDataUrl(updatedDate);
+      } catch (error) {
+        console.log('Error shortening URL', error);
       }
-      const jsonResponse = await response.json();
-
-      const { shortUrl } = jsonResponse;
-
-      const newDataUrl = [{ originalUrl: longUrl, shortUrl: shortUrl }];
-      localStorage.setItem('listOfUrl', JSON.stringify(newDataUrl));
-      setDataUrl(newDataUrl);
-    } catch (error) {
-      console.log('Error shortening URL', error);
-    }
-  }, []);
+    },
+    [dataUrl],
+  );
 
   useEffect(() => {
     const dataStorage = JSON.parse(localStorage.getItem('listOfUrl'));
