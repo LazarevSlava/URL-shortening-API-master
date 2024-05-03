@@ -5,13 +5,61 @@ import Fully from '../assets/icon-fully-customizable.svg?react';
 import { Hero } from './widget/Hero';
 import { Feature } from './widget/Feature';
 import { ShortenField } from './widget/ShortenField';
+import { useEffect, useState, useCallback } from 'react';
+const myKey = import.meta.env.VITE_MY_SECRET_KEY;
+import { endpoint } from '../constants/endpoint';
+import { makeDataUrl } from '../helpers/makeObjectUrl';
 
 function Main() {
+  const [dataUrl, setDataUrl] = useState([]);
+
+  console.log(dataUrl);
+
+  const makeShort = useCallback(
+    async (longUrl) => {
+      const updatedData = makeDataUrl(longUrl);
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': myKey,
+          },
+          body: JSON.stringify(updatedData),
+        });
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        const jsonResponse = await response.json();
+
+        const { shortUrl } = jsonResponse;
+
+        const newDataUrl = { originalUrl: longUrl, shortUrl: shortUrl };
+        const updatedDate = [...dataUrl, newDataUrl];
+        localStorage.setItem('listOfUrl', JSON.stringify(updatedDate));
+
+        setDataUrl(updatedDate);
+      } catch (error) {
+        console.log('Error shortening URL', error);
+      }
+    },
+    [dataUrl],
+  );
+
+  useEffect(() => {
+    const dataStorage = JSON.parse(localStorage.getItem('listOfUrl'));
+    if (dataStorage) {
+      setDataUrl(dataStorage);
+    }
+  }, []);
+
   return (
     <div className={style.main}>
       <Hero />
       <div className={style.shorted}>
-        <ShortenField />
+        <ShortenField makeShort={makeShort} />
+
         <section className={style.advanced}>
           <Feature
             title="Advanced Statistics"
