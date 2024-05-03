@@ -7,24 +7,18 @@ import { Feature } from './widget/Feature';
 import { ShortenField } from './widget/ShortenField';
 import { useEffect, useState, useCallback } from 'react';
 const myKey = import.meta.env.VITE_MY_SECRET_KEY;
-import { endpoint, data } from '../helpers/dataUrl';
+import { endpoint } from '../constants/endpoint';
+import { makeDataUrl } from '../helpers/makeObjectUrl';
 
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
 
   console.log(dataUrl);
 
-  const shorteningUrl = useCallback(
+  const makeShort = useCallback(
     async (longUrl) => {
-      const updatedDestination = {
-        ...data.destinations[0],
-        url: longUrl,
-      };
+      const updatedData = makeDataUrl(longUrl);
 
-      const updatedData = {
-        aliasName: data.aliasName,
-        destinations: [updatedDestination],
-      };
       try {
         const response = await fetch(endpoint, {
           method: 'POST',
@@ -64,7 +58,7 @@ function Main() {
     <div className={style.main}>
       <Hero />
       <div className={style.shorted}>
-        <ShortenField shorteningUrl={shorteningUrl} />
+        <ShortenField makeShort={makeShort} />
 
         <section className={style.advanced}>
           <Feature

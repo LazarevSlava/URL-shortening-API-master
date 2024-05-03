@@ -1,9 +1,9 @@
 import style from './ShortenField.module.css';
 import { Button } from '../elements/Button';
 import { useState, useRef } from 'react';
-import { urlPattern } from '../../helpers/regExp';
+import { urlPattern } from '../../constants/regExp';
 
-function ShortenField({ shorteningUrl = Function.prototype }) {
+function ShortenField({ makeShort = Function.prototype }) {
   const [showError, setShowError] = useState(false);
   const inputRef = useRef(null);
 
@@ -16,7 +16,7 @@ function ShortenField({ shorteningUrl = Function.prototype }) {
       setShowError(true);
     } else {
       setShowError(false);
-      shorteningUrl(inputValue);
+      makeShort(inputValue);
     }
   };
 
