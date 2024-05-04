@@ -9,11 +9,12 @@ import { useEffect, useState, useCallback } from 'react';
 const myKey = import.meta.env.VITE_MY_SECRET_KEY;
 import { endpoint } from '../constants/endpoint';
 import { makeDataUrl } from '../helpers/makeObjectUrl';
+import { DataLinks } from './widget/DataLinks';
 
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
 
-  console.log(dataUrl);
+  console.log(dataUrl.map((item) => console.log(item.originalUrl)));
 
   const makeShort = useCallback(
     async (longUrl) => {
@@ -58,8 +59,16 @@ function Main() {
     <div className={style.main}>
       <Hero />
       <div className={style.shorted}>
-        <ShortenField makeShort={makeShort} />
-
+        <div className={style.searchAndList}>
+          <ShortenField makeShort={makeShort} />
+          {dataUrl.length > 0
+            ? dataUrl.map((item, index) => {
+                return (
+                  <DataLinks key={index} originalUrl={item.originalUrl} shortUrl={item.shortUrl} />
+                );
+              })
+            : ''}
+        </div>
         <section className={style.advanced}>
           <Feature
             title="Advanced Statistics"
@@ -76,8 +85,8 @@ function Main() {
           click. Generic links don't mean a thing. Branded links help instil confidence in your
           content."
           />
+          <hr className={style.line} />
         </section>
-        <hr className={style.line} />
         <section className={style.features}>
           <div className={style.icon}>
             <Detailed />
@@ -87,8 +96,8 @@ function Main() {
             text="Gain insights into who is clicking your links. Knowing when and where people engage with
             your content helps inform better decisions."
           />
+          <hr className={style.line} />
         </section>
-        <hr className={style.line} />
         <section className={style.features}>
           <div className={style.icon}>
             <Fully />

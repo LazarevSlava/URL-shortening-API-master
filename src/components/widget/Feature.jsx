@@ -5,7 +5,7 @@ function Feature({ title, text }) {
   return (
     <>
       <Title size="small">{title}</Title>
-      <Text>{text}</Text>
+      <Text size="normal">{text}</Text>
     </>
   );
 }
