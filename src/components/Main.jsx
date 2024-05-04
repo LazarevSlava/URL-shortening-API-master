@@ -14,8 +14,6 @@ import { DataLinks } from './widget/DataLinks';
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
 
-  console.log(dataUrl.map((item) => console.log(item.originalUrl)));
-
   const makeShort = useCallback(
     async (longUrl) => {
       const updatedData = makeDataUrl(longUrl);
@@ -67,7 +65,7 @@ function Main() {
                   <DataLinks key={index} originalUrl={item.originalUrl} shortUrl={item.shortUrl} />
                 );
               })
-            : ''}
+            : null}
         </div>
         <section className={style.advanced}>
           <Feature

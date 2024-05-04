@@ -7,7 +7,7 @@
 //   - 'big_radius'
 //   - 'normal-radius'
 //   - 'no_radius'
-
+import clsx from 'clsx';
 import style from './Button.module.css';
 
 function Button({
@@ -16,8 +16,9 @@ function Button({
   variant = 'no_radius',
   onClick = Function.prototype,
 }) {
+  const classNames = clsx(style[size], style[variant], style.btn);
   return (
-    <button onClick={onClick} className={`${style.btn} ${style[size]} ${style[variant]}`}>
+    <button onClick={onClick} className={classNames}>
       {children}
     </button>
   );
