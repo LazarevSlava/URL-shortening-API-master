@@ -7,8 +7,8 @@
 }
 
 .small {
-  height: 2rem;
-  width: 8rem;
+  height: 3rem;
+  max-width: 20rem;
 }
 
 .medium {

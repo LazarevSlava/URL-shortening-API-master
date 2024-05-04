@@ -6,6 +6,8 @@
 // Available color options(String):
 //   - 'white'
 //   - 'black'
+//   - 'cyan'
+
 import style from './Title.module.css';
 
 function Title({ children, tag = 'h1', size = 'normal', color = 'black' }) {

@@ -5,6 +5,7 @@ import Fully from '../assets/icon-fully-customizable.svg?react';
 import { Hero } from './widget/Hero';
 import { Feature } from './widget/Feature';
 import { ShortenField } from './widget/ShortenField';
+import { DataLinks } from './widget/DataLinks';
 
 function Main() {
   return (
@@ -12,6 +13,7 @@ function Main() {
       <Hero />
       <div className={style.shorted}>
         <ShortenField />
+        <DataLinks />
         <section className={style.advanced}>
           <Feature
             title="Advanced Statistics"
