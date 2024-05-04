@@ -85,8 +85,8 @@ function Main() {
           click. Generic links don't mean a thing. Branded links help instil confidence in your
           content."
           />
-          <hr className={style.line} />
         </section>
+        <hr className={style.line} />
         <section className={style.features}>
           <div className={style.icon}>
             <Detailed />
@@ -96,8 +96,8 @@ function Main() {
             text="Gain insights into who is clicking your links. Knowing when and where people engage with
             your content helps inform better decisions."
           />
-          <hr className={style.line} />
         </section>
+        <hr className={style.line} />
         <section className={style.features}>
           <div className={style.icon}>
             <Fully />

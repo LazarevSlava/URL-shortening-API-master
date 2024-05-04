@@ -7,20 +7,25 @@
 .cyan {
   color: var(--cyan);
 }
+
 .black {
   color: black;
 }
+
 .small {
   font-size: 0.8rem;
 }
+
 .normal {
   font-size: 1.4rem;
   line-height: 2.5rem;
   color: var(--grayish-violet);
 }
+
 .large {
   font-size: 1.5rem;
 }
+
 .longUrl {
   cursor: pointer;
   white-space: nowrap;
