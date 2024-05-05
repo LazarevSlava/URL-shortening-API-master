@@ -9,11 +9,10 @@ import { useEffect, useState, useCallback } from 'react';
 const myKey = import.meta.env.VITE_MY_SECRET_KEY;
 import { endpoint } from '../constants/endpoint';
 import { makeDataUrl } from '../helpers/makeObjectUrl';
+import { DataLinks } from './widget/DataLinks';
 
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
-
-  console.log(dataUrl);
 
   const makeShort = useCallback(
     async (longUrl) => {
@@ -58,8 +57,16 @@ function Main() {
     <div className={style.main}>
       <Hero />
       <div className={style.shorted}>
-        <ShortenField makeShort={makeShort} />
-
+        <div className={style.searchAndList}>
+          <ShortenField makeShort={makeShort} />
+          {dataUrl.length > 0
+            ? dataUrl.map((item, index) => {
+                return (
+                  <DataLinks key={index} originalUrl={item.originalUrl} shortUrl={item.shortUrl} />
+                );
+              })
+            : null}
+        </div>
         <section className={style.advanced}>
           <Feature
             title="Advanced Statistics"

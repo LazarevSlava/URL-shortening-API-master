@@ -46,3 +46,7 @@
   transform: rotate(90deg);
   border: none;
 }
+
+.searchAndList {
+  margin-top: -9rem;
+}

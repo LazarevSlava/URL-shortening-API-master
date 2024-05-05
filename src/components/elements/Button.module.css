@@ -7,8 +7,8 @@
 }
 
 .small {
-  height: 2rem;
-  width: 8rem;
+  height: 3.3rem;
+  max-width: 30rem;
 }
 
 .medium {
@@ -18,7 +18,7 @@
 
 .large {
   height: 5rem;
-  max-width: 20rem;
+  max-width: 30rem;
 }
 
 .no_radius {
@@ -35,4 +35,8 @@
 
 .btn:hover {
   background-color: var(--bg-cyan-200);
+}
+
+.small:hover {
+  background-color: var(--dark-violet);
 }
