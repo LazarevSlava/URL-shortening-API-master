@@ -3,6 +3,16 @@ import { Text } from '../elements/Text';
 import { Button } from '../elements/Button';
 
 function DataLinks({ shortUrl, originalUrl }) {
+  function copyToClipboard(text) {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        console.log(text);
+      })
+      .catch((err) => {
+        console.error('Failed to copy data', err);
+      });
+  }
   return (
     <div className={style.dataLinksBlock}>
       <div className={style.longUrl}>
@@ -14,7 +24,7 @@ function DataLinks({ shortUrl, originalUrl }) {
       <Text className={style.shortenedUrl} color="cyan" size="large">
         {shortUrl}
       </Text>
-      <Button size="small" variant="normal-radius">
+      <Button onClick={() => copyToClipboard(shortUrl)} size="small" variant="normal-radius">
         Copy
       </Button>
     </div>
