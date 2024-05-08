@@ -4,14 +4,9 @@ import { Button } from '../elements/Button';
 
 function DataLinks({ shortUrl, originalUrl }) {
   function copyToClipboard(text) {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        console.log(text);
-      })
-      .catch((err) => {
-        console.error('Failed to copy data', err);
-      });
+    navigator.clipboard.writeText(text).catch((err) => {
+      console.error('Failed to copy data', err);
+    });
   }
   return (
     <div className={style.dataLinksBlock}>
