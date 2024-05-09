@@ -21,7 +21,7 @@ function DataLinks({ shortUrl, originalUrl }) {
         onClick={() => {
           {
             copyToClipboard(shortUrl);
-            setButtonText('Copied');
+            setButtonText('Copied!');
           }
         }}
         size="small"
