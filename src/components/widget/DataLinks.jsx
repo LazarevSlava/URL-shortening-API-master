@@ -1,13 +1,11 @@
 import style from './DataLinks.module.css';
 import { Text } from '../elements/Text';
 import { Button } from '../elements/Button';
+import { copyToClipboard } from '../../helpers/copyToClipboard';
+import { useState } from 'react';
 
 function DataLinks({ shortUrl, originalUrl }) {
-  function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).catch((err) => {
-      console.error('Failed to copy data', err);
-    });
-  }
+  const [buttonText, setButtonText] = useState('Copy');
   return (
     <div className={style.dataLinksBlock}>
       <div className={style.longUrl}>
@@ -19,8 +17,17 @@ function DataLinks({ shortUrl, originalUrl }) {
       <Text className={style.shortenedUrl} color="cyan" size="large">
         {shortUrl}
       </Text>
-      <Button onClick={() => copyToClipboard(shortUrl)} size="small" variant="normal-radius">
-        Copy
+      <Button
+        onClick={() => {
+          {
+            copyToClipboard(shortUrl);
+            setButtonText('Copied');
+          }
+        }}
+        size="small"
+        variant="normal-radius"
+      >
+        {buttonText}
       </Button>
     </div>
   );
