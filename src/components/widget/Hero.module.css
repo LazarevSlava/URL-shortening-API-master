@@ -22,3 +22,9 @@
   position: absolute;
   right: -14rem;
 }
+
+@media (width >= 53rem) {
+  .more_img {
+    flex-direction: row;
+  }
+}

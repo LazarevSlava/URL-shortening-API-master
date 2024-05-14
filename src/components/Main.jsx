@@ -73,39 +73,41 @@ function Main() {
             text="Track how your links are performing across the web our advanced statistics dashboard"
           />
         </section>
-        <section className={style.features}>
-          <div className={style.icon}>
-            <Brand />
-          </div>
-          <Feature
-            title="Brand Recognition"
-            text="Boost your brand recognition with each
-          click. Generic links don't mean a thing. Branded links help instil confidence in your
-          content."
-          />
-        </section>
-        <hr className={style.line} />
-        <section className={style.features}>
-          <div className={style.icon}>
-            <Detailed />
-          </div>
-          <Feature
-            title="Detailed Records"
-            text="Gain insights into who is clicking your links. Knowing when and where people engage with
-            your content helps inform better decisions."
-          />
-        </section>
-        <hr className={style.line} />
-        <section className={style.features}>
-          <div className={style.icon}>
-            <Fully />
-          </div>
-          <Feature
-            title="Fully Customizable"
-            text="Improve brand awareness and content discoverability through customizable links,
-            supercharging audience engagement."
-          />
-        </section>
+        <div className={style.feature_block}>
+          <section className={style.features}>
+            <div className={style.icon}>
+              <Brand />
+            </div>
+            <Feature
+              title="Brand Recognition"
+              text="Boost your brand recognition with each
+            click. Generic links don't mean a thing. Branded links help instil confidence in your
+            content."
+            />
+          </section>
+          <hr className={style.line} />
+          <section className={`${style.features} ${style.secondChild}`}>
+            <div className={style.icon}>
+              <Detailed />
+            </div>
+            <Feature
+              title="Detailed Records"
+              text="Gain insights into who is clicking your links. Knowing when and where people engage with
+              your content helps inform better decisions."
+            />
+          </section>
+          <hr className={style.line} />
+          <section className={`${style.features} ${style.lastChild}`}>
+            <div className={style.icon}>
+              <Fully />
+            </div>
+            <Feature
+              title="Fully Customizable"
+              text="Improve brand awareness and content discoverability through customizable links,
+              supercharging audience engagement."
+            />
+          </section>
+        </div>
       </div>
     </div>
   );

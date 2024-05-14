@@ -44,3 +44,15 @@
 .hidden {
   display: none;
 }
+
+@media (width >= 48rem) {
+  .field_block {
+    padding: 3rem;
+    flex-direction: row;
+  }
+
+  .message {
+    position: absolute;
+    margin-top: 4rem;
+  }
+}

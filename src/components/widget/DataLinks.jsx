@@ -14,21 +14,23 @@ function DataLinks({ shortUrl, originalUrl }) {
         </Text>
       </div>
       <hr className={style.hr} />
-      <Text className={style.shortenedUrl} color="cyan" size="large">
-        {shortUrl}
-      </Text>
-      <Button
-        onClick={() => {
-          {
-            copyToClipboard(shortUrl);
-            setButtonText('Copied!');
-          }
-        }}
-        size="small"
-        variant="normal-radius"
-      >
-        {buttonText}
-      </Button>
+      <div className={style.copy}>
+        <Text className={style.shortenedUrl} color="cyan" size="large">
+          {shortUrl}
+        </Text>
+        <Button
+          onClick={() => {
+            {
+              copyToClipboard(shortUrl);
+              setButtonText('Copied!');
+            }
+          }}
+          size="small"
+          variant="normal-radius"
+        >
+          {buttonText}
+        </Button>
+      </div>
     </div>
   );
 }

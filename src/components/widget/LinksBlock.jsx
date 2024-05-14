@@ -9,7 +9,11 @@ function LinksBlock({ title, linkList }) {
       </Title>
       <ul className={style.linkList}>
         {linkList.map((link, index) => {
-          return <li key={index}>{link}</li>;
+          return (
+            <li key={index} className={style.link}>
+              {link}
+            </li>
+          );
         })}
       </ul>
     </>

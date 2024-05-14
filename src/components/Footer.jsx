@@ -17,14 +17,22 @@ function Footer() {
         </Button>
       </div>
       <div className={style.down_block}>
-        <Logo fill="white" />
-        <LinksBlock
-          title="Features"
-          linkList={['Link', 'Shortening', 'Branded Links', 'Analytics']}
-        />
+        <div className={style.logo}>
+          <Logo fill="white" />
+        </div>
+        <div className={style.feature}>
+          <LinksBlock
+            title="Features"
+            linkList={['Link', 'Shortening', 'Branded Links', 'Analytics']}
+          />
+        </div>
+        <div className={style.feature}>
+          <LinksBlock title="Resources" linkList={['Blog', 'Developers', 'Support']} />
+        </div>
+        <div className={style.feature}>
+          <LinksBlock title="Company" linkList={['About', 'Our Team', 'Careers', 'Contact']} />
+        </div>
 
-        <LinksBlock title="Resources" linkList={['Blog', 'Developers', 'Support']} />
-        <LinksBlock title="Company" linkList={['About', 'Our Team', 'Careers', 'Contact']} />
         <SocialIcons />
       </div>
     </>
