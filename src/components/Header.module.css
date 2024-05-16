@@ -71,6 +71,17 @@ hr {
 
 .menu_big_screen {
   display: none;
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.menu_big_screen a {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.menu_big_screen a:hover {
+  color: black;
 }
 
 @media (width >= 48rem) {

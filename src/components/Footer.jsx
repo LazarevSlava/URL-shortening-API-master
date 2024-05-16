@@ -17,9 +17,8 @@ function Footer() {
         </Button>
       </div>
       <div className={style.down_block}>
-        <div className={style.logo}>
-          <Logo fill="white" />
-        </div>
+        <Logo className={style.logo} fill="white" />
+
         <div className={style.feature}>
           <LinksBlock
             title="Features"

@@ -17,6 +17,7 @@ function ShortenField({ makeShort = Function.prototype }) {
     } else {
       setShowError(false);
       makeShort(inputValue);
+      inputRef.current.value = '';
     }
   };
 

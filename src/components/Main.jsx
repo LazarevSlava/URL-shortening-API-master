@@ -10,9 +10,12 @@ const myKey = import.meta.env.VITE_MY_SECRET_KEY;
 import { endpoint } from '../constants/endpoint';
 import { makeDataUrl } from '../helpers/makeObjectUrl';
 import { DataLinks } from './widget/DataLinks';
+import clsx from 'clsx';
 
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
+  const classNamesSecondChild = clsx(style.features, style.secondChild);
+  const classNamesLastChild = clsx(style.features, style.lastChild);
 
   const makeShort = useCallback(
     async (longUrl) => {
@@ -86,7 +89,7 @@ function Main() {
             />
           </section>
           <hr className={style.line} />
-          <section className={`${style.features} ${style.secondChild}`}>
+          <section className={classNamesSecondChild}>
             <div className={style.icon}>
               <Detailed />
             </div>
@@ -97,7 +100,7 @@ function Main() {
             />
           </section>
           <hr className={style.line} />
-          <section className={`${style.features} ${style.lastChild}`}>
+          <section className={classNamesLastChild}>
             <div className={style.icon}>
               <Fully />
             </div>

@@ -19,7 +19,7 @@
   color: var(--cyan);
 }
 
-@media (width >= 48rem) {
+@media (width >= 53rem) {
   .linkList {
     align-items: start;
   }
