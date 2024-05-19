@@ -34,7 +34,6 @@ jobs:
         run: npm run build
         env:
         VITE_MY_SECRET_KEY: ${{ secrets.VITE_MY_SECRET_KEY }}
-
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
