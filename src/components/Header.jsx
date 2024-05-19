@@ -39,7 +39,7 @@ function Header() {
           </ul>
         </nav>
         <div>
-          <p>Login</p>
+          <a href="#">Login</a>
           <button className={classNames}>Sign Up</button>
         </div>
       </div>

@@ -92,15 +92,11 @@ hr {
   .menu_big_screen a {
     color: var(--gray);
     text-decoration: none;
+    margin: 0 0.8rem;
   }
 
   .menu_big_screen a:hover {
     color: black;
-  }
-
-  .menu_big_screen p {
-    margin: 0 0.8rem;
-    cursor: pointer;
   }
 
   .menu_big_screen p:hover {
