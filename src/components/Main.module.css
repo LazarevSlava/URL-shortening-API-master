@@ -48,5 +48,42 @@
 }
 
 .searchAndList {
-  margin-top: -9rem;
+  margin-top: -7rem;
+}
+
+@media (width >= 53rem) {
+  .advanced {
+    margin-top: 3rem;
+    padding: 0 20rem;
+  }
+
+  .feature_block {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
+  }
+
+  .secondChild {
+    margin-top: 5rem;
+  }
+
+  .lastChild {
+    margin-top: 7.5rem;
+  }
+
+  .features {
+    height: 15rem;
+  }
+
+  .line {
+    top: 40%;
+    right: 7rem;
+    position: absolute;
+    width: 60%;
+    transform: rotate(0deg);
+  }
+
+  .icon {
+    left: 2rem;
+  }
 }

@@ -8,7 +8,7 @@
 
 .small {
   height: 3.3rem;
-  max-width: 30rem;
+  width: 100%;
 }
 
 .medium {
@@ -17,8 +17,8 @@
 }
 
 .large {
-  height: 5rem;
-  max-width: 30rem;
+  height: 4rem;
+  max-width: 40rem;
 }
 
 .no_radius {
@@ -39,4 +39,14 @@
 
 .small:hover {
   background-color: var(--dark-violet);
+}
+
+@media (width >= 48rem) {
+  .large {
+    width: 15rem;
+  }
+
+  .small {
+    width: 10rem;
+  }
 }

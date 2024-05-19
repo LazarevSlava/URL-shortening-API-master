@@ -10,9 +10,12 @@ const myKey = import.meta.env.VITE_MY_SECRET_KEY;
 import { endpoint } from '../constants/endpoint';
 import { makeDataUrl } from '../helpers/makeObjectUrl';
 import { DataLinks } from './widget/DataLinks';
+import clsx from 'clsx';
 
 function Main() {
   const [dataUrl, setDataUrl] = useState([]);
+  const classNamesSecondChild = clsx(style.features, style.secondChild);
+  const classNamesLastChild = clsx(style.features, style.lastChild);
 
   const makeShort = useCallback(
     async (longUrl) => {
@@ -73,39 +76,41 @@ function Main() {
             text="Track how your links are performing across the web our advanced statistics dashboard"
           />
         </section>
-        <section className={style.features}>
-          <div className={style.icon}>
-            <Brand />
-          </div>
-          <Feature
-            title="Brand Recognition"
-            text="Boost your brand recognition with each
-          click. Generic links don't mean a thing. Branded links help instil confidence in your
-          content."
-          />
-        </section>
-        <hr className={style.line} />
-        <section className={style.features}>
-          <div className={style.icon}>
-            <Detailed />
-          </div>
-          <Feature
-            title="Detailed Records"
-            text="Gain insights into who is clicking your links. Knowing when and where people engage with
-            your content helps inform better decisions."
-          />
-        </section>
-        <hr className={style.line} />
-        <section className={style.features}>
-          <div className={style.icon}>
-            <Fully />
-          </div>
-          <Feature
-            title="Fully Customizable"
-            text="Improve brand awareness and content discoverability through customizable links,
-            supercharging audience engagement."
-          />
-        </section>
+        <div className={style.feature_block}>
+          <section className={style.features}>
+            <div className={style.icon}>
+              <Brand />
+            </div>
+            <Feature
+              title="Brand Recognition"
+              text="Boost your brand recognition with each
+            click. Generic links don't mean a thing. Branded links help instil confidence in your
+            content."
+            />
+          </section>
+          <hr className={style.line} />
+          <section className={classNamesSecondChild}>
+            <div className={style.icon}>
+              <Detailed />
+            </div>
+            <Feature
+              title="Detailed Records"
+              text="Gain insights into who is clicking your links. Knowing when and where people engage with
+              your content helps inform better decisions."
+            />
+          </section>
+          <hr className={style.line} />
+          <section className={classNamesLastChild}>
+            <div className={style.icon}>
+              <Fully />
+            </div>
+            <Feature
+              title="Fully Customizable"
+              text="Improve brand awareness and content discoverability through customizable links,
+              supercharging audience engagement."
+            />
+          </section>
+        </div>
       </div>
     </div>
   );

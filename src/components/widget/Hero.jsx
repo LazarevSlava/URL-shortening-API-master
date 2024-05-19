@@ -6,8 +6,8 @@ import Person from '../../assets/illustration-working.svg?react';
 
 function Hero() {
   return (
-    <div className={style.more_img}>
-      <section className={style.more}>
+    <div className={style.description_img}>
+      <section className={style.description}>
         <Title tag="h1" size="normal">
           More than just shorter links
         </Title>

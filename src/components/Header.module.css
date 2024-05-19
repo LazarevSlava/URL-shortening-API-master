@@ -1,5 +1,6 @@
 .head_block {
   padding: 1.5rem;
+  display: flex;
 }
 
 .head {
@@ -26,7 +27,10 @@ hr {
 }
 
 .menu {
-  height: 25rem;
+  position: absolute;
+  width: calc(100% - 3rem);
+  z-index: 1;
+  height: 30rem;
   margin-top: 1.5rem;
   padding: 2rem 1rem;
   display: flex;
@@ -63,4 +67,54 @@ hr {
 
 .hidden {
   display: none;
+}
+
+.menu_big_screen {
+  display: none;
+}
+
+@media (width >= 48rem) {
+  .btn_menu {
+    display: none;
+  }
+
+  .menu_big_screen {
+    width: 100%;
+    margin: 0 3rem 0 1rem;
+    color: var(--gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
+
+  .menu_big_screen a {
+    color: var(--gray);
+    text-decoration: none;
+    margin: 0 0.8rem;
+  }
+
+  .menu_big_screen a:hover {
+    color: black;
+  }
+
+  .menu_big_screen p:hover {
+    color: black;
+  }
+
+  .menu_big_screen div {
+    display: flex;
+  }
+
+  .btn_sign {
+    font-size: 1rem;
+    padding: 0 1.3rem;
+    max-width: 10rem;
+    height: 1.7rem;
+  }
+
+  .head {
+    width: 8rem;
+  }
 }

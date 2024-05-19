@@ -7,10 +7,10 @@ import Pinterest from '../../assets/icon-pinterest.svg?react';
 function SocialIcons() {
   return (
     <div className={style.icons}>
-      <FaceBook />
-      <Twitter />
-      <Pinterest />
-      <Instagram />
+      <FaceBook className={style.icon} />
+      <Twitter className={style.icon} />
+      <Pinterest className={style.icon} />
+      <Instagram className={style.icon} />
     </div>
   );
 }

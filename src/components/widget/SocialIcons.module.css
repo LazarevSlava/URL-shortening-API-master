@@ -2,5 +2,18 @@
   display: flex;
   gap: 1.5rem;
   padding: 2rem;
+}
+
+.icon {
   cursor: pointer;
+}
+
+.icon:hover path {
+  fill: var(--cyan);
+}
+
+@media (width >= 48rem) {
+  .icons {
+    padding: 1rem;
+  }
 }

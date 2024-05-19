@@ -22,3 +22,27 @@
   justify-content: center;
   gap: 1rem;
 }
+
+@media (width >= 53rem) {
+  .bg {
+    background-image: url('../assets/bg-boost-desktop.svg');
+  }
+
+  .down_block {
+    gap: 0;
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .logo {
+    margin: 1rem 4rem 1rem 1rem;
+  }
+}

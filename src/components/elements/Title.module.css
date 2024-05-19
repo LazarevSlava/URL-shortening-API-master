@@ -17,3 +17,9 @@
 .black {
   color: black;
 }
+
+@media (width >=53rem) {
+  .small {
+    font-size: 1.1rem;
+  }
+}

@@ -22,3 +22,32 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.copy {
+  width: 100%;
+}
+
+@media (width >=48rem) {
+  .hr {
+    display: none;
+  }
+
+  .dataLinksBlock {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    gap: 3rem;
+  }
+
+  .longUrl {
+    overflow: hidden;
+  }
+
+  .copy {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+  }
+}

@@ -1,11 +1,11 @@
-.more_img {
+.description_img {
   display: flex;
   flex-direction: column-reverse;
   padding-left: 1.5rem;
   margin-bottom: 10rem;
 }
 
-.more {
+.description {
   padding: 1.5rem;
   margin-top: 2rem;
   text-align: center;
@@ -21,4 +21,10 @@
   transform: scale(0.8);
   position: absolute;
   right: -14rem;
+}
+
+@media (width >= 53rem) {
+  .description_img {
+    flex-direction: row;
+  }
 }
